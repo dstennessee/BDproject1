@@ -1,10 +1,10 @@
 from pymongo import MongoClient
-import json
+import json            
 
 client = MongoClient()								# connect to the server.
 db = client.test	# returns an object pointing to the DB named "test".
 collection = db.waiter
-from GuinePig4 import update
+from GuinePig4 import update  #import the function created in GuinePig.py
 
 with open('DocOrders.json') as file:
     file_data = json.load(file)
@@ -13,19 +13,24 @@ with open('DocOrders.json') as file:
 print("WELCOME")
 
 
-def menu():
+def menu():        # main menu function
     print("1. Load Orders")
     print("2. Take Order")
     print("3. Show Menu")
     print("4. Review Orders")
     print("5. Cancle Order")
-    print("6. Substute Ordeer")
+    print("6. Substute Order")
     print("0. Exit")
 
     
     
-    option = int(input("what Can I Do For You?: "))
-    return option
+    try:
+        option = int(input("what Can I Do For You?: ")) #if input here not an integer print exception
+        return option
+    except:
+        print("I'm Sorry what was That?")
+        return(-1)
+
 
 def insert():   #for the insert function
  while(True):
@@ -33,26 +38,26 @@ def insert():   #for the insert function
         
     try:
 
-        order = int(input('Order Number:'))
+        order = int(input('Order Number:')) # input set to integer, braek at 0
         if(order == 0):
             break
-        tableNum = int(input('Table Number:'))
+        tableNum = int(input('Table Number:'))# input set to integer, braek at 0
         if(tableNum == 0):
             break
-        entree = input('Entree:')
+        entree = input('Entree:') # input set to all  characters, braek at empty entry
         if(entree == ""):
             break
-        enPrice = float(input('Entree Price:'))
+        enPrice = float(input('Entree Price:')) # input set float , braek at 99
         if(enPrice == 99):
             break
-        bevrage = input('Bevrage:')
+        bevrage = input('Bevrage:')  #input set to all  characters, braek at empty entry
         if(bevrage == ""):
             break
-        bevPrice = float(input('Bevrage Price:'))
+        bevPrice = float(input('Bevrage Price:')) # input set float , braek at 99
         if(bevPrice == 99):
             break
 
-        result = collection.insert_one(
+        result = collection.insert_one( #incert user input into document
                 {
                 "order_number" : order , 
                 "table_number": tableNum, 
@@ -69,7 +74,7 @@ def insert():   #for the insert function
         print("I'm Sorry what was That?") 
 
         
-def main():     #main cli menu
+def main():     #main function for cli menu
 
 
     while(True):
@@ -116,17 +121,25 @@ Beer..........................................5.99
 ###################################################################""")
         elif(optionSelected ==4):       # Option 3 to Review orders
             print("Here is What Was Orderd..")
-            print(collection.find())
-            for doc in collection.find():
-                print(doc)
+            output = list(collection.find()) #to perform .find() operator
+
+            for i in output: #for loop to display documents as a dictionary
+                print("order_number:", i['order_number'])
+                print("table_number:", i['table_number'])
+                print("entree:", i['entree'])
+                print("entree_price:",i['entree_price'])
+                print("bevrage:", i['bevrage'])
+                print("bevrage_price:", i['bevrage_price'])
+                print()
+            
         elif(optionSelected ==5):   # Cancle Orders
             while(True):
                 try:
                     val= int(input("Cange your mind? Which order was This?"))
                     if(val == 0):
-                        break
+                        break     #the loop will search for document baed on user input and delete the document
                     result = collection.delete_one({"order_number": val})
-                    print(result)
+                    print(result)   #set to search based on "order_number"
                     if(val >=1):
                         print("No Problem. Your order has been cancled")
                         break
@@ -135,7 +148,7 @@ Beer..........................................5.99
         elif(optionSelected ==6):
             print("What would you like to change?..")
             
-            update()
+            update() #calls to imported funtion
         
         else:
             print("I'm sorry what was that?...")

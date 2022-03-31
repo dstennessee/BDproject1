@@ -1,7 +1,7 @@
 [
     {
         "order_number" : 1,
-        "table" : 1,
+        "table_number" : 1,
         "entree" : "Chicken",
         "entree_price" : 5.99,
         "bevrage" : "Tea",
@@ -9,7 +9,7 @@
     },
     {
         "order_number" : 2,
-        "table" : 1,
+        "table_number" : 1,
         "entree" : "Beef",
         "entree_price" : 6.99,
         "bevrage" : "Tea",
@@ -17,7 +17,7 @@
     },
     {
         "order_number" : 3,
-        "table" : 1,
+        "table_number" : 1,
         "entree" : "Fish",
         "entree_price" : 5.99,
         "bevrage" : "water",
@@ -25,7 +25,7 @@
     },
     {
         "order_number" : 4,
-        "table" : 3,
+        "table_number" : 3,
         "entree" : "Salad",
         "entree_price" : 4.99,
         "bevrage" : "Beer",
@@ -33,7 +33,7 @@
     },
     {
         "order_number" : 5,
-        "table" : 3,
+        "table_number" : 3,
         "entree" : "Beef",
         "entree_price" : 6.99,
         "bevrage" : "Beer",
@@ -41,7 +41,7 @@
     },
     {
         "order_number" : 6,
-        "table" : 2,
+        "table_number" : 2,
         "entree" : "Chicken",
         "entree_price" : 5.99,
         "bevrage" : "Soda",
@@ -49,7 +49,7 @@
     },
     {
         "order_number" : 7,
-        "table" : 5,
+        "table_number" : 5,
         "entree" : "Beef",
         "entree_price" : 6.99,
         "bevrage" : "Tea",
@@ -57,7 +57,7 @@
     },
     {
         "order_number" : 8,
-        "table" : 2,
+        "table_number" : 2,
         "entree" : "Salad",
         "entree_price" : 4.99,
         "bevrage" : "water",
@@ -65,7 +65,7 @@
     },
     {
         "order_number" : 9,
-        "table" : 8,
+        "table_number" : 8,
         "entree" : "Fish",
         "entree_price" : 5.99,
         "bevrage" : "Soda",
@@ -73,7 +73,7 @@
     },
     {
         "order_number" : 10,
-        "table" : 8,
+        "table_number" : 8,
         "entree" : "Fish",
         "entree_price" : 5.99,
         "bevrage" : "Beer",
@@ -81,7 +81,7 @@
     },
     {
         "order_number" : 11,
-        "table" : 4,
+        "table_number" : 4,
         "entree" : "Beef",
         "entree_price" : 6.99,
         "bevrage" : "Soda",
@@ -89,7 +89,7 @@
     },
     {
         "order_number" : 12,
-        "table" : 2,
+        "table_number" : 2,
         "entree" : "Salad",
         "entree_price" : 4.99,
         "bevrage" : "Tea",
@@ -97,7 +97,7 @@
     },
     {
         "order_number" : 13,
-        "table" : 6,
+        "table_number" : 6,
         "entree" : "Chicken",
         "entree_price" : 5.99,
         "bevrage" : "Soda",
